@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Old Rose Kashmiri Embroidered Sherwani Set</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0);
+        margin-top: 0%;
+        margin-left: 0%;
+      }
+      .product-container {
+        display: flex;
+        max-width: 1200px;
+        padding-right: 0;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .product-image {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 100vh;
+        padding: 0%;
+        width: 100%;
+      }
+      .product-image img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .product-details {
+        flex: 1;
+
+        padding: 20px 40px;
+        box-sizing: border-box;
+      }
+      .product-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .product-description {
+        margin: 10px 0;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .product-price {
+        font-size: 20px;
+        color: #b12704;
+        margin: 10px 0;
+      }
+      .size-selector {
+        display: flex;
+        gap: 10px;
+        margin: 8px 0;
+      }
+      .size-option,
+      .custom-size-option {
+        padding: 8px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        text-align: center;
+        width: 80px;
+      }
+      .custom-size-option {
+        flex: 1;
+      }
+      .size-option.active,
+      .custom-size-option.active {
+        background-color: #000;
+        color: #fff;
+      }
+      .add-to-cart {
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+      .enquire {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .additional-info {
+        font-size: 14px;
+        color: #008000;
+      }
+      .size-guide {
+        font-size: 14px;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-container">
+      <div class="product-image" id="product-image"></div>
+      <div class="product-details">
+        <div class="product-title">
+          Old Rose Kashmiri Embroidered Sherwani Set
+        </div>
+        <div class="product-description">
+          The sherwani, crafted in a subtle shade of old rose, features
+          intricate Kashmiri embroidery known for its meticulous detailing and
+          exquisite patterns. Adorned with delicate thread work and
+          embellishments, each stitch tells a story of tradition and artistry
+          passed down through generations. Paired with a kurta and churidar.<br /><br />
+          Fabric: Sherwani- Georgette; Kurta and Bottom- Spun Silk.<br />
+          Color: Old Rose.<br />
+          Set Includes: Sherwani, Kurta and Churidar.
+        </div>
+        <div class="product-price">MRP: $1982 (Inclusive of all taxes)</div>
+        <div class="size-selector">
+          <div class="size-option" onclick="selectSize(this)">S</div>
+          <div class="size-option" onclick="selectSize(this)">M</div>
+          <div class="size-option" onclick="selectSize(this)">L</div>
+          <div class="size-option" onclick="selectSize(this)">XL</div>
+          <div class="custom-size-option" onclick="selectSize(this)">
+            CUSTOM SIZE
+          </div>
+        </div>
+        <div class="additional-info">Made to order: 7 - 8 Weeks</div>
+        <div class="add-to-cart" onclick="addToCart()">ADD TO CART</div>
+        <div class="enquire">ENQUIRE</div>
+      </div>
+    </div>
+
+    <script>
+      const imageUrls = [
+        "https://i.ibb.co/mvc6Qgd/1.jpg",
+        "https://i.ibb.co/dQLDshX/2.jpg",
+        "https://i.ibb.co/bv85ysZ/3.jpg",
+        "https://i.ibb.co/mvc6Qgd/1.jpg",
+        "https://i.ibb.co/mvc6Qgd/1.jpg",
+      ];
+
+      const productImageContainer = document.getElementById("product-image");
+
+      imageUrls.forEach((url) => {
+        const img = document.createElement("img");
+        img.src = url;
+        img.alt = "Product Image";
+        productImageContainer.appendChild(img);
+      });
+
+      function selectSize(element) {
+        const options = document.querySelectorAll(
+          ".size-option, .custom-size-option"
+        );
+        options.forEach((option) => option.classList.remove("active"));
+        element.classList.add("active");
+      }
+
+      function addToCart() {
+        alert("Item added to cart");
+      }
+    </script>
+  </body>
+</html>
